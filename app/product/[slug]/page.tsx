@@ -1,5 +1,6 @@
 import { fullProduct } from '@/app/intarface';
 import { client } from '@/app/lib/sanity';
+import AddToBag from '@/components/AddToBag';
 import ImageGallery from '@/components/ImageGallery';
 import { Button } from '@/components/ui/button';
 import { Star, Truck } from 'lucide-react';
@@ -63,7 +64,14 @@ export default async function ProductPage({
               <span className="text-sm">2-4 day shipping</span>
             </div>
             <div className="flex gap-2.5">
-              <Button>Add to Bag</Button>
+              <AddToBag
+                currency="EUR"
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+                key={data._id}
+              />
               <Button variant={'secondary'}>Checkout now</Button>
             </div>
             <p className="mt-12 text-base text-gray-500 tracking-wide">
