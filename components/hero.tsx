@@ -15,12 +15,12 @@ export default async function Hero() {
     <section className="mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
       <div className="mb-8 flex flex-wrap justify-between md:mb-16">
         <div className="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
-          <h1 className="mb-4 text-4xl font-bold text-black sm:text-5xl md:mb-8 md:text-6xl">
-            Top Fashion for a top price
+          <h1 className="mb-4 text-4xl font-bold text-black sm:text-5xl md:mb-8 md:text-5xl">
+            Magic of Forest Friends
           </h1>
           <p className="max-w-md leading-relaxed text-gray-500 xl:text-lg">
-            We sell only the most exclusive products for you, we are the best.
-            Shop with us!
+            Embrace the charm of artisanal storytelling with our hand-knitted
+            toys, crafted to bring warmth and whimsy into every embrace.
           </p>
         </div>
 
@@ -49,22 +49,22 @@ export default async function Hero() {
       <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
         <div className=" flex g-12 w-64 divide-x overflow-hidden rounded-lg border">
           <Link
-            href="/Men"
+            href="/Bears"
             className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
           >
-            Men
+            Bears
           </Link>
           <Link
-            href="/Women"
+            href="/Bunnys"
             className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
           >
-            Women
+            Bunnys
           </Link>
           <Link
-            href="/Teens"
+            href="/Toys"
             className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
           >
-            Teens
+            Animals
           </Link>
         </div>
       </div>
