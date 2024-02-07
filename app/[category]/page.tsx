@@ -19,7 +19,7 @@ export default async function CategoryPage({
 }) {
   const data: simplifiedProduct[] = await getData(params.category);
   return (
-    <div className="bg-white">
+    <>
       <div className="mx-auto max-w02xl px-4  sm:px-6  lg:max-w-7xl lg:px-8">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
@@ -57,6 +57,6 @@ export default async function CategoryPage({
           ))}
         </div>
       </div>
-    </div>
+    </>
   );
 }

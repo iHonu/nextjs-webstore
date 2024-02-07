@@ -21,7 +21,7 @@ export default async function ProductPage({
 }) {
   const data: fullProduct = await getData(params.slug);
   return (
-    <div className="bg-white">
+    <div>
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
         <div className="grid gap-8 md:grid-cols-2">
           <ImageGallery images={data.images} />
@@ -30,7 +30,7 @@ export default async function ProductPage({
               <span className="mb-0.5 inline-block text-gray-500">
                 {data.categoryName}
               </span>
-              <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">
+              <h2 className=" font-PlayfairDisplay text-2xl font-bold text-gray-800 lg:text-3xl">
                 {data.name}
               </h2>
             </div>
