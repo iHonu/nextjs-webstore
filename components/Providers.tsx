@@ -12,8 +12,8 @@ export default function CartProvider({
       mode="payment"
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
-      successUrl="http://nextjs-webstore-three/stripe/success"
-      cancelUrl="http://nextjs-webstore-three/stripe/error"
+      successUrl="http://https://nextjs-webstore-three.vercel.app//stripe/success"
+      cancelUrl="http://https://nextjs-webstore-three.vercel.app//stripe/error"
       currency="EUR"
       billingAddressCollection={false}
       shouldPersist={true}
