@@ -37,18 +37,7 @@ export default async function ProductPage({
                 {data.name}
               </h2>
             </div>
-            <div className="mb-6 flex items-center gap-3 md:mb-10">
-              <Button
-                className="rounded-full gap-x-2
-              "
-              >
-                <span className="text-sm">4.2</span>
-                <Star className="h-5 w-5" />
-              </Button>
-              <span className="text-sm text-gray-500 transition duration-200">
-                56 Ratings
-              </span>
-            </div>
+
             <div className="mb-4">
               <div className="flex items-end gap-2">
                 <span className="text-xl font-bold text-gray-800 md:text-2xl">

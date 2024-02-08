@@ -16,10 +16,10 @@ export default function NavBar() {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
   return (
-    <header className="mb-8 ">
+    <header className="mb-12 border-b border-gray-500 p-6">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
         <Link href="/">
-          <h1 className=" font-PlayfairDisplay placeholder:text-2xl md:text-4xl font-bold">
+          <h1 className=" font-PlayfairDisplay placeholder:text-2xl md:text-3xl">
             Forest Magique
           </h1>
         </Link>
@@ -36,7 +36,7 @@ export default function NavBar() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-lg font-semibold text-gray-600 transition duration-200 hover:text-primary"
+                  className="text-lg text-gray-600 transition duration-200 hover:text-primary"
                 >
                   {link.name}
                 </Link>
@@ -48,12 +48,9 @@ export default function NavBar() {
           <Button
             onClick={() => handleCartClick()}
             variant={'outline'}
-            className="bg-light-green flex flex-col gap-y-1.5 g-12 h-12 w-12 sm:w-20 md:h-24 md:w-24 border-none"
+            className="bg-light-green  border-none hover:text-primary hover:bg-light-green transition duration-200 "
           >
-            <ShoppingBag />
-            <span className="hidden text-xs font-semibold text-gray-600 sm:block">
-              Cart
-            </span>
+            <ShoppingBag size={24} />
           </Button>
         </div>
       </div>

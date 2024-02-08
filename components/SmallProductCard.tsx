@@ -10,11 +10,11 @@ export default function ProductItem({
   return (
     <div className="group relative" key={product._id}>
       <Link href={`/product/${product.slug}`}>
-        <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
+        <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200  lg:h-80">
           <Image
             src={product.imageUrl}
             alt="Product image"
-            className="w-full h-full object-cover object-center lg:h-full lg:w-full"
+            className="w-full h-full object-cover object-center lg:h-full lg:w-full hover:scale-105 transition duration-200 "
             width={300}
             height={300}
           />
