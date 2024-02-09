@@ -1,54 +1,80 @@
 'use client';
 
+// Import necessary hooks and the categoryFetch function
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from './ui/button';
-import { ShoppingBag } from 'lucide-react';
+import { ShoppingBag, Menu } from 'lucide-react';
 import { useShoppingCart } from 'use-shopping-cart';
-
-const links = [
-  { name: 'Bears', href: '/Bears' },
-  { name: 'Bunnys', href: '/Bunnys' },
-  { name: 'Other Animals', href: '/Toys' },
-];
+import MenuModal from './MenuModal';
+import categoryFetch from '@/app/lib/sanity';
+import { Category } from '@/app/intarface';
 
 export default function NavBar() {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const fetchedCategories = await categoryFetch();
+      setCategories(fetchedCategories);
+    };
+    fetchCategories();
+  }, []);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="mb-12 border-b border-gray-500 p-6">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
         <Link href="/">
-          <h1 className=" font-PlayfairDisplay placeholder:text-2xl md:text-3xl">
+          <h1 className="font-PlayfairDisplay placeholder:text-2xl md:text-3xl cursor-pointer">
             Forest Magique
           </h1>
         </Link>
-        <nav className="hidden gap-12 lg:flex 2xl:ml-16">
-          {links.map((link, index) => (
+        <div className="lg:hidden">
+          <button onClick={toggleMenu}>
+            {isMenuOpen ? (
+              <MenuModal
+                isOpen={isMenuOpen}
+                onClose={toggleMenu}
+                categories={categories}
+              />
+            ) : (
+              <Menu />
+            )}
+          </button>
+        </div>
+        <nav
+          className={`${
+            isMenuOpen ? 'flex flex-row gap-2' : 'hidden'
+          } lg:flex flex-col lg:flex-row gap-12 2xl:ml-16`}
+        >
+          {categories.map((category, index) => (
             <div key={index}>
-              {pathname === link.href ? (
-                <Link
-                  href={link.href}
-                  className="text-lg font-semibold text-primary"
-                >
-                  {link.name}
-                </Link>
-              ) : (
-                <Link
-                  href={link.href}
-                  className="text-lg text-gray-600 transition duration-200 hover:text-primary"
-                >
-                  {link.name}
-                </Link>
-              )}
+              <Link
+                className={`text-lg ${
+                  pathname === `/${category.name}`
+                    ? 'font-semibold text-primary'
+                    : 'text-gray-600 transition duration-200 hover:text-primary'
+                }`}
+                href={`/${category.name}`}
+              >
+                {category.name}
+              </Link>
             </div>
           ))}
         </nav>
-        <div className="">
+        <div>
           <Button
             onClick={() => handleCartClick()}
             variant={'outline'}
-            className="bg-light-green  border-none hover:text-primary hover:bg-light-green transition duration-200 "
+            className="bg-light-green border-none hover:text-primary hover:bg-light-green transition duration-200"
           >
             <ShoppingBag size={24} />
           </Button>

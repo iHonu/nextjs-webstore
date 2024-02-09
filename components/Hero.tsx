@@ -1,16 +1,13 @@
 import { client, urlFor } from '@/app/lib/sanity';
 import Link from 'next/link';
 import Image from 'next/image';
-
-async function getData() {
-  const query = '*[_type == "heroimages"][0]';
-
-  const data = await client.fetch(query);
-  return data;
-}
+import categoryFetch from '@/app/lib/sanity';
+import { heroImagesFetch } from '@/app/lib/sanity';
+import { Category } from '@/app/intarface';
 
 export default async function Hero() {
-  const data = await getData();
+  const heroImages = await heroImagesFetch();
+  const categories = await categoryFetch();
   return (
     <section className="mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
       <div className="mb-8 flex flex-wrap justify-between md:mb-16">
@@ -27,7 +24,7 @@ export default async function Hero() {
         <div className="mb-12 flex w-full md:mb-16 lg:w-2/3">
           <div className="relative left-12 top-12 z-10 -ml-12 overflow-hidden rounded-lg bg-gray-100 shadow-lg md:left-16 md:top-16 lg:ml-0">
             <Image
-              src={urlFor(data.image1).url()}
+              src={urlFor(heroImages.image1).url()}
               alt="Great Photo"
               className="h-full w-full object-cover object-center"
               width={500}
@@ -36,7 +33,7 @@ export default async function Hero() {
           </div>
           <div className="overflow-hidden rounded-lg bg-gray-100 shadow-lg">
             <Image
-              src={urlFor(data.image2).url()}
+              src={urlFor(heroImages.image2).url()}
               alt="Also great image"
               className="h-full  object-cover object-center"
               width={500}
@@ -48,24 +45,15 @@ export default async function Hero() {
       </div>
       <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
         <div className=" flex g-12 w-64 divide-x overflow-hidden rounded-lg border">
-          <Link
-            href="/Bears"
-            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-          >
-            Bears
-          </Link>
-          <Link
-            href="/Bunnys"
-            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-          >
-            Bunnys
-          </Link>
-          <Link
-            href="/Toys"
-            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
-          >
-            Animals
-          </Link>
+          {categories.map((category: Category, index: number) => (
+            <Link
+              key={index}
+              href={`/${category.name}`} 
+              className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+            >
+              {category.name}
+            </Link>
+          ))}
         </div>
       </div>
     </section>
