@@ -14,7 +14,7 @@ export default function ProductItem({
           <Image
             src={product.imageUrl}
             alt="Product image"
-            className="w-full h-full object-cover object-center lg:h-full lg:w-full hover:scale-105 transition duration-200 "
+            className="w-full h-full object-cover object-center lg:h-full lg:w-full scale-105 hover:scale-100 transition duration-200 "
             width={300}
             height={300}
           />
@@ -22,11 +22,13 @@ export default function ProductItem({
       </Link>
       <div className="mt-4 flex justify-between">
         <div>
-          <h3 className=" text-sm text-gray-700">
+          <h3 className=" text-sm text-slate-800 hover:opacity-75 transition duration-200">
             <Link href={`/product/${product.slug}`}>{product.name}</Link>
           </h3>
           <Link href={`/${product.categoryName}`}>
-            <p className="mt-1 text-sm text-gray-500">{product.categoryName}</p>
+            <p className="mt-1 text-sm text-slate-600 hover:opacity-85">
+              {product.categoryName}
+            </p>
           </Link>
         </div>
         <p className="text-sm font-medium text-gray-900">{product.price} EUR</p>
