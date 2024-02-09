@@ -1,6 +1,6 @@
 Work in progress...
 
-## DEMO: [`next-store`](https://nextjs-webstore-5gaa-b3vrjhefy-anastasias-projects-f425f0d8.vercel.app/)
+## DEMO: [`next-store`](nextjs-webstore-three.vercel.app)
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
