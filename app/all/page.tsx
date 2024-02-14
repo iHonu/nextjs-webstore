@@ -17,9 +17,9 @@ export default async function Newest() {
 
   return (
     <>
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl px-4 py-4 sm:px-4 sm:py-6 lg:max-w-7xl lg:px-2">
         <div className="flex justify-between items-center">
-          <h2 className="text-2xl tracking-tight text-slate-900">
+          <h2 className="text-2xl tracking-tight text-dark-brown">
             All of our products
           </h2>
         </div>

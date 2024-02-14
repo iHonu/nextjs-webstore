@@ -24,6 +24,8 @@ const config = {
       colors: {
         'light-pink': '#E0CCBE',
         'light-gray': '#EEEDEB',
+        'dark-brown': '#3C3633',
+        'custom-green': '#747264',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

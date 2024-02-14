@@ -12,7 +12,7 @@ export default async function Hero() {
     <section className="mx-auto max-w-2xl px-4 sm:pb-6 lg:max-w-7xl lg:px-8">
       <div className="mb-8 flex flex-wrap justify-between md:mb-16">
         <div className="mb-6 flex w-full flex-col justify-center sm:mb-12 lg:mb-0 lg:w-1/3 lg:pb-24 lg:pt-48">
-          <h1 className="font-PlayfairDisplay mb-4 text-4xl font-bold text-black sm:text-5xl md:mb-8 md:text-5xl">
+          <h1 className="font-PlayfairDisplay mb-4 text-4xl font-bold text-dark-brown sm:text-5xl md:mb-8 md:text-5xl">
             Magic of Forest Friends
           </h1>
           <p className="max-w-md leading-relaxed text-gray-500 xl:text-lg">
@@ -44,12 +44,12 @@ export default async function Hero() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-        <div className=" flex g-12 w-64 divide-x overflow-hidden rounded-lg border">
+        <div className=" flex g-12 w-64 divide-x overflow-hidden rounded border">
           {categories.map((category: Category, index: number) => (
             <Link
               key={index}
-              href={`/${category.name}`} 
-              className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+              href={`/${category.name}`}
+              className="flex w-1/3 py-1 items-center justify-center  bg-custom-green/80 text-stale-500 transition duration-100 hover:bg-light-pink active:bg-gray-200"
             >
               {category.name}
             </Link>
