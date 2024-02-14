@@ -30,7 +30,7 @@ export default function NavBar() {
   };
 
   return (
-    <header className="mb-12 border-b border-gray-500 p-6">
+    <header className="mb-12 border-b border-stone-500 p-6  bg-stone-200">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
         <Link href="/">
           <h1 className="font-PlayfairDisplay placeholder:text-2xl md:text-3xl cursor-pointer">
@@ -74,7 +74,7 @@ export default function NavBar() {
           <Button
             onClick={() => handleCartClick()}
             variant={'outline'}
-            className="bg-light-green border-none hover:text-primary hover:bg-light-green transition duration-200"
+            className="bg-stone-200 border-none hover:text-primary hover:bg-light-green transition duration-200"
           >
             <ShoppingBag size={24} />
           </Button>

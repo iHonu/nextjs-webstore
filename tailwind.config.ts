@@ -22,7 +22,8 @@ const config = {
         PlayfairDisplay: ['Playfair Display', 'serif'],
       },
       colors: {
-        'light-green': '#dee3e0',
+        'light-pink': '#E0CCBE',
+        'light-gray': '#EEEDEB',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
