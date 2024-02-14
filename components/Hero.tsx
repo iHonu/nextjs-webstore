@@ -49,7 +49,7 @@ export default async function Hero() {
             <Link
               key={index}
               href={`/${category.name}`}
-              className="flex w-1/3 py-1 items-center justify-center  bg-custom-green/80 text-stale-500 transition duration-100 hover:bg-light-pink active:bg-gray-200"
+              className="flex w-1/3 py-1 items-center justify-center  bg-custom-green/60 text-stale-500 transition duration-100 hover:bg-light-pink active:bg-gray-200"
             >
               {category.name}
             </Link>
