@@ -9,6 +9,7 @@ import {
 import Image from 'next/image';
 import { useShoppingCart } from 'use-shopping-cart';
 import { Button } from './ui/button';
+import { Trash2 } from 'lucide-react';
 
 export default function ShoppingCartModal() {
   const {
@@ -69,16 +70,15 @@ export default function ShoppingCartModal() {
                         <p className="mt-1 text-sm text-gray-500 line-clamp-2">
                           {entry.description}
                         </p>
-                        <div className="flex flex-1 items-end justify-between text-sm">
+                        <div className="flex flex-1 items-center justify-between text-sm mt-1">
                           <p className="text-gray-500">{entry.quantity}</p>
                           <div className="flex">
-                            <button
-                              type="button"
-                              className="font-medium text-primary hover:text-primary/80"
+                            <Button
+                              variant="link"
                               onClick={() => removeItem(entry.id)}
                             >
-                              Remove
-                            </button>
+                              <Trash2 className="mr-1 h-3 w-3" /> Remove
+                            </Button>
                           </div>
                         </div>
                       </div>
@@ -103,10 +103,10 @@ export default function ShoppingCartModal() {
             </div>
             <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
               <p>
-                OR{' '}
+                OR{'  '}
                 <button
                   onClick={() => handleCartClick()}
-                  className="font-medium text-primary hover:text-primary/80"
+                  className="font-medium text-primary hover:text-light-pink transition duration-20"
                 >
                   continue shopping
                 </button>
