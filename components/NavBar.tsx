@@ -16,6 +16,7 @@ export default function NavBar() {
   const { handleCartClick, cartCount } = useShoppingCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
+  const cartItems: number = cartCount || 0;
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -71,9 +72,12 @@ export default function NavBar() {
           ))}
         </nav>
         <div className="relative">
-          <div className="absolute -top-1 -right-1 bg-red-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-            {cartCount}
-          </div>
+          {cartItems > 0 && (
+            <div className="absolute -top-1 -right-1 bg-red-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+              {cartCount}
+            </div>
+          )}
+
           <Button
             onClick={() => handleCartClick()}
             variant={'outline'}

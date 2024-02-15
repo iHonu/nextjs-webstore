@@ -2,9 +2,9 @@ export default function About() {
   return (
     <div className=" bg-light-pink text-gray-600">
       <div className=" max-w-3xl mx-auto py-8 sm:py-16 px-8 ">
-        <h1 className="text-center font-PlayfairDisplay text-2xl font-bold mb-6 text-dark-brown lg:text-4xl">
+        <h2 className="text-center font-PlayfairDisplay text-2xl font-bold mb-6 text-dark-brown lg:text-4xl">
           About Us
-        </h1>
+        </h2>
         <p className="text-gray-600 text-sm leading-loose sm:text-base md:leading-8">
           A place where every stitch tells a story, and every toy holds a heart.
           Born from a passion for artisanal craftsmanship and a love for the
