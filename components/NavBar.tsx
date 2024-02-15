@@ -13,7 +13,7 @@ import { Category } from '@/app/intarface';
 
 export default function NavBar() {
   const pathname = usePathname();
-  const { handleCartClick } = useShoppingCart();
+  const { handleCartClick, cartCount } = useShoppingCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [categories, setCategories] = useState<Category[]>([]);
 
@@ -70,11 +70,14 @@ export default function NavBar() {
             </div>
           ))}
         </nav>
-        <div>
+        <div className="relative">
+          <div className="absolute -top-1 -right-1 bg-red-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+            {cartCount}
+          </div>
           <Button
             onClick={() => handleCartClick()}
             variant={'outline'}
-            className="bg-stone-200 border-none hover:text-primary hover:bg-light-green transition duration-200"
+            className="bg-stone-200 border-none hover:text-primary hover:bg-light-green transition duration-200 flex items-center justify-center"
           >
             <ShoppingBag size={24} />
           </Button>
