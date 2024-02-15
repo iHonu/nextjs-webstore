@@ -44,12 +44,12 @@ export default async function Hero() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-        <div className=" flex g-12 w-64 divide-x overflow-hidden rounded border">
+        <div className=" flex g-12 w-64 divide-x divide-custom-green/40 overflow-hidden rounded border">
           {categories.map((category: Category, index: number) => (
             <Link
               key={index}
               href={`/${category.name}`}
-              className="flex w-1/3 py-1 items-center justify-center  bg-custom-green/60 text-stale-500 transition duration-100 hover:bg-light-pink active:bg-gray-200"
+              className="flex w-1/3 py-1 items-center justify-center  bg-custom-green/30 text-stale-500 transition duration-200 hover:bg-light-pink active:bg-gray-200"
             >
               {category.name}
             </Link>
