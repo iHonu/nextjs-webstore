@@ -4,6 +4,7 @@ import './globals.css';
 import NavBar from '@/components/NavBar';
 import CartProvider from '@/components/Providers';
 import ShoppingCartModal from '@/components/ShoppingCartModal';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({
           <NavBar />
           <ShoppingCartModal />
           {children}
+          <Analytics />
         </CartProvider>
       </body>
     </html>
