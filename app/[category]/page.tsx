@@ -24,7 +24,8 @@ export default async function CategoryPage({
       <div className="mx-auto max-w02xl px-4  sm:px-6  lg:max-w-7xl lg:px-8">
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-            Our Products for {params.category}
+            Our Products for{' '}
+            <span className=" text-primary">{params.category}</span>
           </h2>
         </div>
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">

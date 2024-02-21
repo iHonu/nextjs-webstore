@@ -10,7 +10,7 @@ export default function ProductItem({
   return (
     <div className="group relative" key={product._id}>
       <Link href={`/product/${product.slug}`}>
-        <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200  lg:h-80">
+        <div className=" animate-slide-img aspect-square w-full overflow-hidden rounded-md bg-gray-200  lg:h-80">
           <Image
             src={product.imageUrl}
             alt="Product image"
@@ -20,8 +20,8 @@ export default function ProductItem({
           />
         </div>
       </Link>
-      <div className="mt-4 flex justify-between">
-        <div>
+      <div className="animate-slide-text mt-4 flex justify-between">
+        <div className=" ">
           <h3 className=" text-sm text-slate-800 hover:opacity-75 transition duration-200">
             <Link href={`/product/${product.slug}`}>{product.name}</Link>
           </h3>
