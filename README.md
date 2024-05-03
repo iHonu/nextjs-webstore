@@ -2,6 +2,15 @@ Work in progress...
 
 ## DEMO: [`next-store`](nextjs-webstore-three.vercel.app)
 
+# E-commerce Web Application
+
+## Overview
+This repository contains the code for a sophisticated e-commerce web application built with [Next.js](https://nextjs.org/). The application features a robust payment system integrated with [Stripe](https://stripe.com/) to handle both instant and cart-based transactions. 
+
+## Features
+- **Next.js Framework**: Utilizing the powerful and flexible capabilities of Next.js for building scalable server-side rendered and static web applications.
+- **Stripe Integration**: Comprehensive payment solutions are integrated seamlessly to support various transaction types.
+- **Content Management**: Leveraging [Sanity](https://www.sanity.io/) as a CMS, the application includes custom fields and utilizes GROQ to efficiently fetch data, enhancing content dynamism and management.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
