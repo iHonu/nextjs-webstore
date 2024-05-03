@@ -4,7 +4,7 @@ Work in progress...
 
 # E-commerce Web Application
 
-## Overview
+
 This repository contains the code for a sophisticated e-commerce web application built with [Next.js](https://nextjs.org/). The application features a robust payment system integrated with [Stripe](https://stripe.com/) to handle both instant and cart-based transactions. 
 
 ## Features
